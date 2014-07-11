@@ -1,4 +1,4 @@
 color-palette
 =============
 
-Simple ruby gem for web friendly set of colors that can used in different ways to add randomness to your application.
+A simple color gem that returns you with a palette of colors which are web friendly and easy to use.
