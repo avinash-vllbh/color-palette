@@ -7,7 +7,7 @@ class ColorPalette
   def get_color_codes_in_hex(h, s, l)
 
   end
-  def hue2rgb(p,q,t)
+  def self.hue2rgb(p,q,t)
     t = t + 1 if t < 0
     t = t -1 if t > 1
     if 6 * t < 1
@@ -21,7 +21,7 @@ class ColorPalette
     end
     return p
   end
-  def get_color_codes_in_rgb(h, s, l)
+  def self.get_color_codes_in_rgb(h, s, l)
     if s == 0
       r = g = b = l * 255
     else
@@ -37,13 +37,13 @@ class ColorPalette
     end
     return "#{r},#{g},#{b}"
   end
-  def rgb2hex(r, g, b)
+  def self.rgb2hex(r, g, b)
     h1 = r.to_s(16).length == 2 ? r.to_s(16) : "0"+r.to_s(16)
     h2 = g.to_s(16).length == 2 ? g.to_s(16) : "0"+g.to_s(16)
     h3 = b.to_s(16).length == 2 ? b.to_s(16) : "0"+b.to_s(16)
     return "##{h1}#{h2}#{h3}"
   end
-	def get_colors_arrays(size)
+	def self.palette(size)
     color_palette = []
     hue_array = []
     hue = 359
@@ -67,6 +67,6 @@ class ColorPalette
   end
 end
 
-cp = ColorPalette.new
-colors = cp.get_colors_arrays(20)
-puts colors
+# cp = ColorPalette.new
+# colors = cp.get_colors_arrays(20)
+# puts ColorPalette.palette(4)

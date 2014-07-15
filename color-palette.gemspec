@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'color-palette'
-  s.version     = '0.0.0'
+  s.version     = '0.0.1'
   s.date        = '2014-07-11'
   s.summary     = "Palette of colors to choose from."
   s.description = "A simple color gem that returns you with a palette of colors which are web friendly and easy to use."
