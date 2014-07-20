@@ -1,7 +1,6 @@
 #color-palette.rb
-require 'pry'
 class ColorPalette
-  def get_hsl_values_decimal(color)
+def get_hsl_values_decimal(color)
 
   end
   def get_color_codes_in_hex(h, s, l)
@@ -43,10 +42,11 @@ class ColorPalette
     h3 = b.to_s(16).length == 2 ? b.to_s(16) : "0"+b.to_s(16)
     return "##{h1}#{h2}#{h3}"
   end
-	def self.palette(size)
+  def self.palette(size, options = {})
     color_palette = []
     hue_array = []
     hue = 359
+    size = size.to_i
     step_size = 360/size
     for i in 0..size-1
       hue_array.push(hue)
@@ -63,10 +63,15 @@ class ColorPalette
       color_codes["hex"] = rgb2hex(rgb[0].to_i, rgb[1].to_i, rgb[2].to_i)
       color_palette.push(color_codes) unless color_palette.include?(color_codes)
     end
+    if options[:hex] != nil
+      if options[:hex] == true
+        cpalette = []
+        color_palette.each do |color|
+          cpalette.push(color["hex"])
+        end
+        color_palette = cpalette
+      end
+    end
     return color_palette
   end
 end
-
-# cp = ColorPalette.new
-# colors = cp.get_colors_arrays(20)
-# puts ColorPalette.palette(4)
